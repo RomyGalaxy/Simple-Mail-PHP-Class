@@ -35,7 +35,7 @@ class Mail {
 
     public function htmlStyles ($html) {
         if($this->styles === false) return $html;
-        $html = str_replace('</head>', '<style></style>', $html);
+        $html = str_replace('</head>', '<style></style></head>', $html);
         foreach ($this->_styles as $tag => $style) {
             $styles = $tag . '{' .$style. '}';
             $html = str_replace('</style>', '' . $styles . '</style>', $html);
